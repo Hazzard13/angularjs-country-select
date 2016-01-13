@@ -257,6 +257,8 @@ angular.module('countrySelect', [])
       template: '<select ng-options="country in countries"></select>',
       replace: true,
       link: function (scope, elem, attrs) {
+        scope.countries = countries;
+
         if (!!attrs.ngModel) {
           var assignCountry = $parse(attrs.ngModel).assign;
 
