@@ -254,7 +254,7 @@ angular.module('countrySelect', [])
 
     return {
       restrict: 'E',
-      template: '<select><option>' + countries.join('</option><option>') + '</option></select>',
+      template: '<select ng-options="country in countries"></select>',
       replace: true,
       link: function (scope, elem, attrs) {
         if (!!attrs.ngModel) {
